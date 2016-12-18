@@ -1,7 +1,9 @@
-$tree_width_max: 250px
-$tree_height_max: 180px
+$tree_width_max: 300px
+$tree_height_max: 210px
 $margin_bottom: 80px
 $ball_size: 10px
+$ball_color: rgb(222, 160, 21)
+$star_color: rgb(238, 184, 23)
 
 @mixin tree_sizing($h,$w,$m)
   $width: $tree_width_max - $w
@@ -31,13 +33,13 @@ $ball_size: 10px
   position: relative
 h1
   text-align: center
-  color: rgb(238, 184, 23)
+  color: white
 
 .christmas_tree
   width: 500px
   height: 700px
   position: relative
-  top: 150px
+  top: 100px
   left: 50%
   margin-left: -250px
 #vaso
@@ -46,6 +48,10 @@ h1
   border-left: 50px solid transparent
   border-right: 50px solid transparent
   margin-left: -85px
+  height: 0
+  left: 50%
+  position: relative
+  top: 0px
 
 .tree_section
   height: 0
@@ -56,7 +62,7 @@ h1
   &::before, &::after
     content: ""
     border-radius: 50%
-    border: $ball_size solid rgb(222, 160, 21)
+    border: $ball_size solid $ball_color
     position: absolute
     width: 0
     height: 0
@@ -68,7 +74,7 @@ h1
   @include tree_sizing(0,0,$margin_bottom)
 
 .second
-  @include tree_sizing(20,50,0)
+  @include tree_sizing(30,50,0)
 
 .first
   @include tree_sizing(40,100,10)
@@ -79,37 +85,71 @@ h1
 .star_tree
   margin: 50px 0 0 -96px
   position: relative
-  display: block
-  color: red
   width: 0px
   height: 0px
-  border-right:  100px solid transparent
-  border-bottom: 70px  solid red
-  border-left:   100px solid transparent
   left: 50%
   transform: rotate(35deg)
-  &::before
-    border-bottom: 80px solid red
-    border-left: 30px solid transparent
-    border-right: 30px solid transparent
+  &::before, &::after
+    content: ''
     position: absolute
     height: 0
     width: 0
+  &::before
+    border-bottom: 80px solid $star_color
+    border-left: 30px solid transparent
+    border-right: 30px solid transparent
     top: -45px
     left: -65px
-    display: block
-    content: ''
     transform: rotate(-35deg)
+  , &::after
+    color: $star_color
+    border-bottom: 70px solid $star_color
+    border-right: 100px solid transparent
+    border-left: 100px solid transparent
   &::after
-    position: absolute
-    display: block
-    color: red
     top: 3px
     left: -105px
-    width: 0px
-    height: 0px
-    border-right: 100px solid transparent
-    border-bottom: 70px solid red
-    border-left: 100px solid transparent
     transform: rotate(-70deg)
-    content: ''
+
+.lights
+  position: relative
+  , &::before, &::after
+    width: 20px
+    height: 30px
+    background: $ball_color
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%
+    z-index: 1
+  &::before, &::after
+    content: ""
+    position: absolute
+
+.light_1
+  top: -526px
+  left: 161px
+  &::before
+    top: 351px
+    left: -39px
+  &::after
+    top: -43px
+    left: 120px
+
+.light_2
+  top: -422px
+  left: 103px
+  &::before
+    top: -30px
+    left: 247px
+  &::after
+    top: -43px
+    left: 120px
+
+
+.light_3
+  top: -342px
+  left: 175px
+  &::before
+    top: 75px
+    left: 164px
+  &::after
+    top: -43px
+    left: 120px

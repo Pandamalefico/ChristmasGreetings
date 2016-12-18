@@ -12,14 +12,14 @@
 
 h1 {
   text-align: center;
-  color: #eeb817;
+  color: white;
 }
 
 .christmas_tree {
   width: 500px;
   height: 700px;
   position: relative;
-  top: 150px;
+  top: 100px;
   left: 50%;
   margin-left: -250px;
 }
@@ -30,6 +30,10 @@ h1 {
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
   margin-left: -85px;
+  height: 0;
+  left: 50%;
+  position: relative;
+  top: 0px;
 }
 
 .tree_section {
@@ -51,126 +55,183 @@ h1 {
 }
 
 .third {
-  border-bottom: 180px solid green;
-  border-left: 250px solid transparent;
-  border-right: 250px solid transparent;
-  margin-left: -250px;
+  border-bottom: 210px solid green;
+  border-left: 300px solid transparent;
+  border-right: 300px solid transparent;
+  margin-left: -300px;
   margin-bottom: 0px;
 }
 
 .third::before {
+  left: -300px;
+  bottom: -210px;
+  margin-left: -10px;
+}
+
+.third::after {
+  right: -300px;
+  bottom: -210px;
+  margin-right: -10px;
+}
+
+.second {
+  border-bottom: 180px solid green;
+  border-left: 250px solid transparent;
+  border-right: 250px solid transparent;
+  margin-left: -250px;
+  margin-bottom: -80px;
+}
+
+.second::before {
   left: -250px;
   bottom: -180px;
   margin-left: -10px;
 }
 
-.third::after {
+.second::after {
   right: -250px;
   bottom: -180px;
   margin-right: -10px;
 }
 
-.second {
-  border-bottom: 160px solid green;
+.first {
+  border-bottom: 170px solid green;
   border-left: 200px solid transparent;
   border-right: 200px solid transparent;
   margin-left: -200px;
-  margin-bottom: -80px;
-}
-
-.second::before {
-  left: -200px;
-  bottom: -160px;
-  margin-left: -10px;
-}
-
-.second::after {
-  right: -200px;
-  bottom: -160px;
-  margin-right: -10px;
-}
-
-.first {
-  border-bottom: 140px solid green;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  margin-left: -150px;
   margin-bottom: -70px;
 }
 
 .first::before {
-  left: -150px;
-  bottom: -140px;
+  left: -200px;
+  bottom: -170px;
   margin-left: -10px;
 }
 
 .first::after {
-  right: -150px;
-  bottom: -140px;
+  right: -200px;
+  bottom: -170px;
   margin-right: -10px;
 }
 
 .top_tree {
-  border-bottom: 130px solid green;
-  border-left: 100px solid transparent;
-  border-right: 100px solid transparent;
-  margin-left: -100px;
+  border-bottom: 160px solid green;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  margin-left: -150px;
   margin-bottom: -60px;
 }
 
 .top_tree::before {
-  left: -100px;
-  bottom: -130px;
+  left: -150px;
+  bottom: -160px;
   margin-left: -10px;
 }
 
 .top_tree::after {
-  right: -100px;
-  bottom: -130px;
+  right: -150px;
+  bottom: -160px;
   margin-right: -10px;
 }
 
 .star_tree {
   margin: 50px 0 0 -96px;
   position: relative;
-  display: block;
-  color: red;
   width: 0px;
   height: 0px;
-  border-right: 100px solid transparent;
-  border-bottom: 70px  solid red;
-  border-left: 100px solid transparent;
   left: 50%;
   transform: rotate(35deg);
 }
 
-.star_tree::before {
-  border-bottom: 80px solid red;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
+.star_tree::before, .star_tree::after {
+  content: '';
   position: absolute;
   height: 0;
   width: 0;
+}
+
+.star_tree::before {
+  border-bottom: 80px solid #eeb817;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
   top: -45px;
   left: -65px;
-  display: block;
-  content: '';
   transform: rotate(-35deg);
 }
 
+.star_tree, .star_tree::after {
+  color: #eeb817;
+  border-bottom: 70px solid #eeb817;
+  border-right: 100px solid transparent;
+  border-left: 100px solid transparent;
+}
+
 .star_tree::after {
-  position: absolute;
-  display: block;
-  color: red;
   top: 3px;
   left: -105px;
-  width: 0px;
-  height: 0px;
-  border-right: 100px solid transparent;
-  border-bottom: 70px solid red;
-  border-left: 100px solid transparent;
   transform: rotate(-70deg);
-  content: '';
+}
+
+.lights {
+  position: relative;
+}
+
+.lights, .lights::before, .lights::after {
+  width: 20px;
+  height: 30px;
+  background: #dea015;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  z-index: 1;
+}
+
+.lights::before, .lights::after {
+  content: "";
+  position: absolute;
+}
+
+.light_1 {
+  top: -526px;
+  left: 161px;
+}
+
+.light_1::before {
+  top: 351px;
+  left: -39px;
+}
+
+.light_1::after {
+  top: -43px;
+  left: 120px;
+}
+
+.light_2 {
+  top: -422px;
+  left: 103px;
+}
+
+.light_2::before {
+  top: -30px;
+  left: 247px;
+}
+
+.light_2::after {
+  top: -43px;
+  left: 120px;
+}
+
+.light_3 {
+  top: -342px;
+  left: 175px;
+}
+
+.light_3::before {
+  top: 75px;
+  left: 164px;
+}
+
+.light_3::after {
+  top: -43px;
+  left: 120px;
 }
 
 /*# sourceMappingURL=style.css.map */
