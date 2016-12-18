@@ -1,0 +1,176 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background: #2d2d2d;
+  width: 100%;
+  height: 900px;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  color: #eeb817;
+}
+
+.christmas_tree {
+  width: 500px;
+  height: 700px;
+  position: relative;
+  top: 150px;
+  left: 50%;
+  margin-left: -250px;
+}
+
+#vaso {
+  width: 70px;
+  border-top: 120px solid #411b03;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  margin-left: -85px;
+}
+
+.tree_section {
+  height: 0;
+  left: 50%;
+  position: relative;
+  top: 0px;
+  width: 0;
+}
+
+.tree_section::before, .tree_section::after {
+  content: "";
+  border-radius: 50%;
+  border: 10px solid #dea015;
+  position: absolute;
+  width: 0;
+  height: 0;
+  margin-bottom: -10px;
+}
+
+.third {
+  border-bottom: 180px solid green;
+  border-left: 250px solid transparent;
+  border-right: 250px solid transparent;
+  margin-left: -250px;
+  margin-bottom: 0px;
+}
+
+.third::before {
+  left: -250px;
+  bottom: -180px;
+  margin-left: -10px;
+}
+
+.third::after {
+  right: -250px;
+  bottom: -180px;
+  margin-right: -10px;
+}
+
+.second {
+  border-bottom: 160px solid green;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  margin-left: -200px;
+  margin-bottom: -80px;
+}
+
+.second::before {
+  left: -200px;
+  bottom: -160px;
+  margin-left: -10px;
+}
+
+.second::after {
+  right: -200px;
+  bottom: -160px;
+  margin-right: -10px;
+}
+
+.first {
+  border-bottom: 140px solid green;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  margin-left: -150px;
+  margin-bottom: -70px;
+}
+
+.first::before {
+  left: -150px;
+  bottom: -140px;
+  margin-left: -10px;
+}
+
+.first::after {
+  right: -150px;
+  bottom: -140px;
+  margin-right: -10px;
+}
+
+.top_tree {
+  border-bottom: 130px solid green;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  margin-left: -100px;
+  margin-bottom: -60px;
+}
+
+.top_tree::before {
+  left: -100px;
+  bottom: -130px;
+  margin-left: -10px;
+}
+
+.top_tree::after {
+  right: -100px;
+  bottom: -130px;
+  margin-right: -10px;
+}
+
+.star_tree {
+  margin: 50px 0 0 -96px;
+  position: relative;
+  display: block;
+  color: red;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px  solid red;
+  border-left: 100px solid transparent;
+  left: 50%;
+  transform: rotate(35deg);
+}
+
+.star_tree::before {
+  border-bottom: 80px solid red;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: -45px;
+  left: -65px;
+  display: block;
+  content: '';
+  transform: rotate(-35deg);
+}
+
+.star_tree::after {
+  position: absolute;
+  display: block;
+  color: red;
+  top: 3px;
+  left: -105px;
+  width: 0px;
+  height: 0px;
+  border-right: 100px solid transparent;
+  border-bottom: 70px solid red;
+  border-left: 100px solid transparent;
+  transform: rotate(-70deg);
+  content: '';
+}
+
+/*# sourceMappingURL=style.css.map */
